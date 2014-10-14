@@ -1,0 +1,244 @@
+synthesis:  version Diamond (64-bit) 3.3.0.109
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Oct 14 20:52:01 2014
+
+
+Command Line:  synthesis -f orgel_impl1_lattice.synproj -gui 
+
+Synthesis options:
+The -a option is MachXO2.
+The -s option is 4.
+The -t option is TQFP144.
+The -d option is LCMXO2-7000HE.
+Using package TQFP144.
+Using performance grade 4.
+                                                          
+
+##########################################################
+
+### Lattice Family : MachXO2A
+
+### Device  : LCMXO2-7000HE
+
+### Package : TQFP144
+
+### Speed   : 4
+
+##########################################################
+
+                                                          
+
+Optimization goal = Balanced
+Top-level module name = top_layer.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true (default)
+DSP utilization = 100 % (default)
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+WARNING - synthesis: Using default loop_limit value of 1950
+
+Use IO Insertion = TRUE
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data (searchpath added)
+-p C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1 (searchpath added)
+-p C:/Users/Spikee/Desktop/kakmetperen/orgel (searchpath added)
+VHDL library = work
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Clock_Generator.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Const_Key.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Key2_Pulselenght.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Pulselenght2_Audio.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/readkey.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/showkey.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Tone_Generator.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/top_layer.vhd
+NGD file = orgel_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Compile design.
+Compile Design Begin
+Top module name (VHDL): top_layer
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Top-level module name = top_layer.
+
+Extracted state machine for register: \Read_key/L_Constantkey/current_s
+
+State machine has 4 states with original encoding
+
+original encoding -> new encoding (OneHot Encoding)
+
+ 00 -> 0001
+
+ 01 -> 0010
+
+ 10 -> 0100
+
+ 11 -> 1000
+
+ Number of Reachable States for this State Machine are 3 
+
+
+
+
+
+WARNING - synthesis: c:/users/spikee/desktop/kakmetperen/orgel/impl1/source/const_key.vhd(88): Bit 0 of Register \Read_key/L_Constantkey/current_s_FSM is stuck at Zero. VDB-5010
+GSR instance connected to net reset_c.
+WARNING - synthesis: No user .sdc file.
+Applying 200.000000 MHz constraint to all clocks
+
+Results of NGD DRC are available in top_layer_drc.log.
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_32/CO' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_32/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_30/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_30/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_28/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_28/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_26/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_26/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_33/CO' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_33/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_24/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_24/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_22/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_22/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_20/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_20/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_18/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_18/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_16/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_16/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_1/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_14/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_14/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_12/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_12/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_10/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_10/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_8/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_8/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_6/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_6/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_4/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_4/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_2/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_2/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/cnt_229_add_4_17/CO' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_14/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_14/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_12/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_12/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/cnt_229_add_4_1/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_17/CO' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_17/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_0/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_0/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_16/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_16/S1' has no load.
+WARNING - synthesis: DRC complete with 47 warnings.
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file orgel_impl1.ngd.
+
+################### Begin Area Report (top_layer)######################
+Number of register bits => 94 of 7209 (1 % )
+CCU2D => 47
+FD1P3AX => 28
+FD1P3IX => 7
+FD1S1D => 1
+FD1S3AX => 6
+FD1S3AY => 1
+FD1S3BX => 1
+FD1S3DX => 1
+FD1S3IX => 49
+GSR => 1
+IB => 4
+LUT4 => 201
+OB => 2
+PFUMX => 23
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 5
+  Net : n7, loads : 49
+  Net : clk_divider, loads : 18
+  Net : clk_c, loads : 17
+  Net : n7, loads : 10
+  Net : n1917, loads : 2
+Clock Enable Nets
+Number of Clock Enables: 13
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : n49, loads : 61
+  Net : n4003, loads : 33
+  Net : n1809, loads : 32
+  Net : n793, loads : 31
+  Net : n1888, loads : 31
+  Net : n4026, loads : 30
+  Net : n4021, loads : 27
+  Net : scancode_sync_1, loads : 27
+  Net : n4025, loads : 27
+  Net : n50, loads : 22
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets \Tone_Gen/clk_divider]   |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets clk_c]                   |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets \Read_key/L_Showkey/n7]  |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets                          |             |             |
+\Read_key/L_Constantkey/n7]             |            -|            -|     0  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Peak Memory Usage: 77.316  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 1.357  secs
+--------------------------------------------------------------

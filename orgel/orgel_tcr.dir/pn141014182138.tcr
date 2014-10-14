@@ -1,0 +1,8 @@
+#Start recording tcl command: 10/14/2014 18:03:42
+#Project Location: C:/Users/Spikee/Desktop/kakmetperen/orgel; Project name: orgel
+prj_project open "C:/Users/Spikee/Desktop/kakmetperen/orgel/orgel.ldf"
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+#Stop recording: 10/14/2014 18:21:38

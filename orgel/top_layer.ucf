@@ -1,0 +1,9 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clk"  LOC = "C9"  | IOSTANDARD = LVCMOS33;
+NET "reset"  LOC = "K17" | IOSTANDARD = LVTTL  | PULLUP;
+NET "kbclock"  LOC = "G14" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW | CLOCK_DEDICATED_ROUTE = TRUE;
+NET "kbdata"  LOC = "G13" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW;
+NET "audioL" LOC = "C7" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST;
+NET "audioR" LOC = "F8" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST;

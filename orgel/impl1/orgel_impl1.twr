@@ -1,0 +1,1565 @@
+
+Loading design for application trce from file orgel_impl1.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 4
+Loading device for application trce from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.3.0.109
+Mon Oct 13 15:31:40 2014
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o orgel_impl1.twr -gui orgel_impl1.ncd orgel_impl1.prf 
+Design file:     orgel_impl1.ncd
+Preference file: orgel_impl1.prf
+Device,speed:    LCMXO2-7000HE,4
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY PORT "clk" 50.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.014ns (weighted slack = 0.028ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i4  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i3
+
+   Delay:              14.843ns  (38.9% logic, 61.1% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.843ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_33 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.014ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_33:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36C.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.843   (38.9% logic, 61.1% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_33:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36C.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.014ns (weighted slack = 0.028ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i0  (to \Tone_Gen/clk_divider +)
+
+   Delay:              14.843ns  (38.9% logic, 61.1% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.843ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_35 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.014ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_35:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36A.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.843   (38.9% logic, 61.1% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_35:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36A.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.014ns (weighted slack = 0.028ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i2  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i1
+
+   Delay:              14.843ns  (38.9% logic, 61.1% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.843ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_34 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.014ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_34:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36B.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.843   (38.9% logic, 61.1% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_34:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36B.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.014ns (weighted slack = 0.028ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i6  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i5
+
+   Delay:              14.843ns  (38.9% logic, 61.1% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.843ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_43 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.014ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_43:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36D.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.843   (38.9% logic, 61.1% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_43:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36D.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.128ns (weighted slack = 0.256ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i10  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i9
+
+   Delay:              14.729ns  (39.2% logic, 60.8% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.729ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_39 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.128ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_39:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.007      R8C35B.F0 to     R8C37B.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.729   (39.2% logic, 60.8% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_39:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C37B.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.128ns (weighted slack = 0.256ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i8  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i7
+
+   Delay:              14.729ns  (39.2% logic, 60.8% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.729ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_40 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.128ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_40:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.007      R8C35B.F0 to     R8C37A.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.729   (39.2% logic, 60.8% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_40:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C37A.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.128ns (weighted slack = 0.256ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i12  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i11
+
+   Delay:              14.729ns  (39.2% logic, 60.8% route), 12 logic levels.
+
+ Constraint Details:
+
+     14.729ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_36 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.128ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_36:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452     R9C31B.CLK to      R9C31B.Q1 SLICE_73 (from clk_c)
+ROUTE        22     1.519      R9C31B.Q1 to      R7C32C.B0 scancode_sync_3
+CTOF_DEL    ---     0.495      R7C32C.B0 to      R7C32C.F0 SLICE_116
+ROUTE        20     1.024      R7C32C.F0 to      R7C32A.A1 n4060
+CTOF_DEL    ---     0.495      R7C32A.A1 to      R7C32A.F1 SLICE_112
+ROUTE         1     0.626      R7C32A.F1 to      R7C32A.D0 n3905
+CTOF_DEL    ---     0.495      R7C32A.D0 to      R7C32A.F0 SLICE_112
+ROUTE         1     0.744      R7C32A.F0 to      R8C32B.C0 n4_adj_57
+CTOF_DEL    ---     0.495      R8C32B.C0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.007      R8C35B.F0 to     R8C37C.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.729   (39.2% logic, 60.8% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to SLICE_73:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to     R9C31B.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_36:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C37C.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.408ns (weighted slack = 0.816ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i6  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i4  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i3
+
+   Delay:              14.449ns  (36.5% logic, 63.5% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.449ns physical path delay Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_33 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.408ns
+
+ Physical Path Details:
+
+      Data path Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_33:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R10C39C.CLK to     R10C39C.Q0 Read_key/SLICE_75 (from clk_c)
+ROUTE         6     1.481     R10C39C.Q0 to      R8C33A.D0 scancode_sync_6
+CTOF_DEL    ---     0.495      R8C33A.D0 to      R8C33A.F0 SLICE_94
+ROUTE        26     1.529      R8C33A.F0 to      R8C32B.B1 n4068
+CTOF_DEL    ---     0.495      R8C32B.B1 to      R8C32B.F1 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.004      R8C32B.F1 to      R8C32B.B0 Tone_Gen/Pulse_Length/n72
+CTOF_DEL    ---     0.495      R8C32B.B0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36C.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.449   (36.5% logic, 63.5% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/SLICE_75:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R10C39C.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_33:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36C.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.408ns (weighted slack = 0.816ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i6  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i0  (to \Tone_Gen/clk_divider +)
+
+   Delay:              14.449ns  (36.5% logic, 63.5% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.449ns physical path delay Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_35 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.408ns
+
+ Physical Path Details:
+
+      Data path Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_35:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R10C39C.CLK to     R10C39C.Q0 Read_key/SLICE_75 (from clk_c)
+ROUTE         6     1.481     R10C39C.Q0 to      R8C33A.D0 scancode_sync_6
+CTOF_DEL    ---     0.495      R8C33A.D0 to      R8C33A.F0 SLICE_94
+ROUTE        26     1.529      R8C33A.F0 to      R8C32B.B1 n4068
+CTOF_DEL    ---     0.495      R8C32B.B1 to      R8C32B.F1 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.004      R8C32B.F1 to      R8C32B.B0 Tone_Gen/Pulse_Length/n72
+CTOF_DEL    ---     0.495      R8C32B.B0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36A.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.449   (36.5% logic, 63.5% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/SLICE_75:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R10C39C.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_35:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36A.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+
+Passed: The following path meets requirements by 0.408ns (weighted slack = 0.816ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i6  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i6  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i5
+
+   Delay:              14.449ns  (36.5% logic, 63.5% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.449ns physical path delay Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_43 meets
+     10.000ns delay constraint less
+     -5.131ns skew and
+      0.274ns LSR_SET requirement (totaling 14.857ns) by 0.408ns
+
+ Physical Path Details:
+
+      Data path Read_key/SLICE_75 to Tone_Gen/Audio_Pulse/SLICE_43:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452    R10C39C.CLK to     R10C39C.Q0 Read_key/SLICE_75 (from clk_c)
+ROUTE         6     1.481     R10C39C.Q0 to      R8C33A.D0 scancode_sync_6
+CTOF_DEL    ---     0.495      R8C33A.D0 to      R8C33A.F0 SLICE_94
+ROUTE        26     1.529      R8C33A.F0 to      R8C32B.B1 n4068
+CTOF_DEL    ---     0.495      R8C32B.B1 to      R8C32B.F1 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.004      R8C32B.F1 to      R8C32B.B0 Tone_Gen/Pulse_Length/n72
+CTOF_DEL    ---     0.495      R8C32B.B0 to      R8C32B.F0 Tone_Gen/Pulse_Length/SLICE_98
+ROUTE         1     1.079      R8C32B.F0 to      R9C31D.C1 Tone_Gen/Pulse_Length/n85
+CTOF_DEL    ---     0.495      R9C31D.C1 to      R9C31D.F1 SLICE_110
+ROUTE         3     0.967      R9C31D.F1 to      R9C34D.D0 Tone_Gen/n91
+CTOF_DEL    ---     0.495      R9C34D.D0 to      R9C34D.F0 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         1     1.023      R9C34D.F0 to      R7C34A.B1 Tone_Gen/Audio_Pulse/pulselenght_11
+C1TOFCO_DE  ---     0.889      R7C34A.B1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.162     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.162     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.643     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.967      R7C34D.F1 to      R8C35B.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.495      R8C35B.D0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     1.121      R8C35B.F0 to     R8C36D.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   14.449   (36.5% logic, 63.5% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/SLICE_75:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R10C39C.CLK clk_c
+                  --------
+                    4.347   (26.0% logic, 74.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_43:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          3.PAD to        3.PADDI clk
+ROUTE        16     3.215        3.PADDI to    R14C27A.CLK clk_c
+REG_DEL     ---     0.452    R14C27A.CLK to     R14C27A.Q0 Tone_Gen/Clock_Generator/SLICE_67
+ROUTE         1     1.278     R14C27A.Q0 to     R14C20A.C1 Tone_Gen/Clock_Generator/n871
+CTOF_DEL    ---     0.495     R14C20A.C1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     2.906     R14C20A.F1 to     R8C36D.CLK \Tone_Gen/clk_divider
+                  --------
+                    9.478   (21.9% logic, 78.1% route), 3 logic levels.
+
+Report:   50.070MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 50.000000 MHz ;    |   50.000 MHz|   50.070 MHz|  12  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 16
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: kbclock_c   Source: kbclock.PAD
+      Not reported because source and destination domains are unrelated.
+      To report these transfers please refer to preference CLKSKEWDIFF to define
+      external clock skew between clock ports.
+
+   Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 1
+
+Clock Domain: kbclock_c   Source: kbclock.PAD   Loads: 30
+   No transfer within this clock domain is found
+
+Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0   Loads: 2
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 5
+
+Clock Domain: \Tone_Gen/clk_divider   Source: Tone_Gen/Clock_Generator/SLICE_130.F1   Loads: 13
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 10
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 10147 paths, 6 nets, and 739 connections (62.95% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.3.0.109
+Mon Oct 13 15:31:41 2014
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o orgel_impl1.twr -gui orgel_impl1.ncd orgel_impl1.prf 
+Design file:     orgel_impl1.ncd
+Preference file: orgel_impl1.prf
+Device,speed:    LCMXO2-7000HE,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY PORT "clk" 50.000000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 2.522ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.449ns  (38.6% logic, 61.4% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.449ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.971ns) by 2.522ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.446     R10C31C.Q1 to      R8C34D.A1 n50
+CTOF_DEL    ---     0.101      R8C34D.A1 to      R8C34D.F1 Tone_Gen/Audio_Pulse/SLICE_148
+ROUTE         1     0.223      R8C34D.F1 to      R7C34D.B0 Tone_Gen/Audio_Pulse/pulselenght_1
+CTOF1_DEL   ---     0.225      R7C34D.B0 to      R7C34D.F1 SLICE_37
+ROUTE         2     0.220      R7C34D.F1 to      R8C35D.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.101      R8C35D.D0 to      R8C35D.F0 Tone_Gen/Audio_Pulse/SLICE_69
+ROUTE         1     0.000      R8C35D.F0 to     R8C35D.DI0 Tone_Gen/Audio_Pulse/n54 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.449   (38.6% logic, 61.4% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.469ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.458ns  (29.9% logic, 70.1% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.458ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.469ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.570     R10C31C.Q1 to      R9C34D.B1 n50
+CTOF_DEL    ---     0.101      R9C34D.B1 to      R9C34D.F1 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         2     0.139      R9C34D.F1 to      R8C34B.C1 Tone_Gen/Audio_Pulse/pulselenght_7
+CTOF_DEL    ---     0.101      R8C34B.C1 to      R8C34B.F1 Tone_Gen/SLICE_134
+ROUTE         1     0.056      R8C34B.F1 to      R8C34A.C1 Tone_Gen/Audio_Pulse/n3772
+CTOF_DEL    ---     0.101      R8C34A.C1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.458   (29.9% logic, 70.1% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.524ns  (47.4% logic, 52.6% route), 5 logic levels.
+
+ Constraint Details:
+
+      1.524ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.971ns) by 2.447ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.446     R10C31C.Q1 to      R8C34D.A0 n50
+CTOF_DEL    ---     0.101      R8C34D.A0 to      R8C34D.F0 Tone_Gen/Audio_Pulse/SLICE_148
+ROUTE         1     0.135      R8C34D.F0 to      R7C34C.D1 Tone_Gen/Audio_Pulse/pulselenght_2
+C1TOFCO_DE  ---     0.225      R7C34C.D1 to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.163     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.220      R7C34D.F1 to      R8C35D.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.101      R8C35D.D0 to      R8C35D.F0 Tone_Gen/Audio_Pulse/SLICE_69
+ROUTE         1     0.000      R8C35D.F0 to     R8C35D.DI0 Tone_Gen/Audio_Pulse/n54 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.524   (47.4% logic, 52.6% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.401ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.526ns  (28.6% logic, 71.4% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.526ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.401ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.480     R10C31C.Q1 to      R9C33C.C1 n50
+CTOF_DEL    ---     0.101      R9C33C.C1 to      R9C33C.F1 SLICE_95
+ROUTE         8     0.219      R9C33C.F1 to      R9C34C.A0 n4054
+CTOF_DEL    ---     0.101      R9C34C.A0 to      R9C34C.F0 Tone_Gen/Audio_Pulse/SLICE_152
+ROUTE         1     0.134      R9C34C.F0 to      R8C34A.D1 Tone_Gen/Audio_Pulse/n3721
+CTOF_DEL    ---     0.101      R8C34A.D1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.526   (28.6% logic, 71.4% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.393ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.534ns  (28.4% logic, 71.6% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.534ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.393ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.558     R10C31C.Q1 to      R9C34A.A1 n50
+CTOF_DEL    ---     0.101      R9C34A.A1 to      R9C34A.F1 Tone_Gen/Audio_Pulse/SLICE_146
+ROUTE         2     0.227      R9C34A.F1 to      R8C34B.B1 Tone_Gen/Audio_Pulse/pulselenght_6
+CTOF_DEL    ---     0.101      R8C34B.B1 to      R8C34B.F1 Tone_Gen/SLICE_134
+ROUTE         1     0.056      R8C34B.F1 to      R8C34A.C1 Tone_Gen/Audio_Pulse/n3772
+CTOF_DEL    ---     0.101      R8C34A.C1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.534   (28.4% logic, 71.6% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.360ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i2  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.567ns  (27.8% logic, 72.2% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.567ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.360ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q0 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        63     0.679     R10C31C.Q0 to      R9C34D.A1 n49
+CTOF_DEL    ---     0.101      R9C34D.A1 to      R9C34D.F1 Tone_Gen/Audio_Pulse/SLICE_147
+ROUTE         2     0.139      R9C34D.F1 to      R8C34B.C1 Tone_Gen/Audio_Pulse/pulselenght_7
+CTOF_DEL    ---     0.101      R8C34B.C1 to      R8C34B.F1 Tone_Gen/SLICE_134
+ROUTE         1     0.056      R8C34B.F1 to      R8C34A.C1 Tone_Gen/Audio_Pulse/n3772
+CTOF_DEL    ---     0.101      R8C34A.C1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.567   (27.8% logic, 72.2% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.355ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i2  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.616ns  (47.6% logic, 52.4% route), 7 logic levels.
+
+ Constraint Details:
+
+      1.616ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.971ns) by 2.355ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q0 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        63     0.489     R10C31C.Q0 to      R9C34A.C0 n49
+CTOF_DEL    ---     0.101      R9C34A.C0 to      R9C34A.F0 Tone_Gen/Audio_Pulse/SLICE_146
+ROUTE         1     0.138      R9C34A.F0 to      R7C34A.C1 Tone_Gen/Audio_Pulse/pulselenght_10
+C1TOFCO_DE  ---     0.225      R7C34A.C1 to     R7C34A.FCO SLICE_42
+ROUTE         1     0.000     R7C34A.FCO to     R7C34B.FCI Tone_Gen/Audio_Pulse/n3151
+FCITOFCO_D  ---     0.023     R7C34B.FCI to     R7C34B.FCO SLICE_41
+ROUTE         1     0.000     R7C34B.FCO to     R7C34C.FCI Tone_Gen/Audio_Pulse/n3152
+FCITOFCO_D  ---     0.023     R7C34C.FCI to     R7C34C.FCO SLICE_38
+ROUTE         1     0.000     R7C34C.FCO to     R7C34D.FCI Tone_Gen/Audio_Pulse/n3153
+FCITOF1_DE  ---     0.163     R7C34D.FCI to      R7C34D.F1 SLICE_37
+ROUTE         2     0.220      R7C34D.F1 to      R8C35D.D0 Tone_Gen/Audio_Pulse/n9
+CTOF_DEL    ---     0.101      R8C35D.D0 to      R8C35D.F0 Tone_Gen/Audio_Pulse/SLICE_69
+ROUTE         1     0.000      R8C35D.F0 to     R8C35D.DI0 Tone_Gen/Audio_Pulse/n54 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.616   (47.6% logic, 52.4% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.354ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i2  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.573ns  (27.7% logic, 72.3% route), 4 logic levels.
+
+ Constraint Details:
+
+      1.573ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.354ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q0 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        63     0.597     R10C31C.Q0 to      R9C34A.D1 n49
+CTOF_DEL    ---     0.101      R9C34A.D1 to      R9C34A.F1 Tone_Gen/Audio_Pulse/SLICE_146
+ROUTE         2     0.227      R9C34A.F1 to      R8C34B.B1 Tone_Gen/Audio_Pulse/pulselenght_6
+CTOF_DEL    ---     0.101      R8C34B.B1 to      R8C34B.F1 Tone_Gen/SLICE_134
+ROUTE         1     0.056      R8C34B.F1 to      R8C34A.C1 Tone_Gen/Audio_Pulse/n3772
+CTOF_DEL    ---     0.101      R8C34A.C1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.573   (27.7% logic, 72.3% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.351ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/audio_tmp_19  (to \Tone_Gen/clk_divider +)
+
+   Delay:               1.576ns  (34.1% logic, 65.9% route), 5 logic levels.
+
+ Constraint Details:
+
+      1.576ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.351ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.446     R10C31C.Q1 to      R8C33A.A0 n50
+CTOF_DEL    ---     0.101      R8C33A.A0 to      R8C33A.F0 SLICE_94
+ROUTE        26     0.145      R8C33A.F0 to      R8C34B.D0 n4068
+CTOF_DEL    ---     0.101      R8C34B.D0 to      R8C34B.F0 Tone_Gen/SLICE_134
+ROUTE         2     0.135      R8C34B.F0 to      R8C34B.D1 Tone_Gen/pulselenght_12
+CTOF_DEL    ---     0.101      R8C34B.D1 to      R8C34B.F1 Tone_Gen/SLICE_134
+ROUTE         1     0.056      R8C34B.F1 to      R8C34A.C1 Tone_Gen/Audio_Pulse/n3772
+CTOF_DEL    ---     0.101      R8C34A.C1 to      R8C34A.F1 SLICE_119
+ROUTE         1     0.257      R8C34A.F1 to     R8C35D.LSR Tone_Gen/Audio_Pulse/n3676 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.576   (34.1% logic, 65.9% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_69:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C35D.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+
+Error: The following path exceeds requirements by 2.321ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/current_s_FSM_i1  (from clk_c +)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i12  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i11
+
+   Delay:               1.606ns  (20.9% logic, 79.1% route), 3 logic levels.
+
+ Constraint Details:
+
+      1.606ns physical path delay Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_36 exceeds
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+     -3.984ns skew requirement (totaling 3.927ns) by 2.321ns
+
+ Physical Path Details:
+
+      Data path Read_key/L_Constantkey/SLICE_71 to Tone_Gen/Audio_Pulse/SLICE_36:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R10C31C.CLK to     R10C31C.Q1 Read_key/L_Constantkey/SLICE_71 (from clk_c)
+ROUTE        20     0.480     R10C31C.Q1 to      R9C33C.C1 n50
+CTOF_DEL    ---     0.101      R9C33C.C1 to      R9C33C.F1 SLICE_95
+ROUTE         8     0.556      R9C33C.F1 to      R8C35B.B0 n4054
+CTOF_DEL    ---     0.101      R8C35B.B0 to      R8C35B.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7     0.235      R8C35B.F0 to     R8C37C.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                    1.606   (20.9% logic, 79.1% route), 3 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path clk to Read_key/L_Constantkey/SLICE_71:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C31C.CLK clk_c
+                  --------
+                    1.602   (28.0% logic, 72.0% route), 1 logic levels.
+
+      Destination Clock Path clk to Tone_Gen/Audio_Pulse/SLICE_36:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     0.449          3.PAD to        3.PADDI clk
+ROUTE        16     1.153        3.PADDI to    R10C29C.CLK clk_c
+REG_DEL     ---     0.154    R10C29C.CLK to     R10C29C.Q0 Tone_Gen/Clock_Generator/SLICE_64
+ROUTE        11     0.764     R10C29C.Q0 to     R14C29B.D0 Tone_Gen/Clock_Generator/freqentie_0
+CTOF_DEL    ---     0.177     R14C29B.D0 to     R14C29B.F0 Tone_Gen/Clock_Generator/SLICE_99
+ROUTE         7     0.490     R14C29B.F0 to     R14C20A.D0 Tone_Gen/Clock_Generator/n5
+CTOF_DEL    ---     0.177     R14C20A.D0 to     R14C20A.F0 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE         2     0.460     R14C20A.F0 to    R14C26A.CLK Tone_Gen/Clock_Generator/n1528
+REG_DEL     ---     0.154    R14C26A.CLK to     R14C26A.Q0 SLICE_66
+ROUTE         1     0.464     R14C26A.Q0 to     R14C20A.D1 Tone_Gen/Clock_Generator/n870
+CTOF_DEL    ---     0.177     R14C20A.D1 to     R14C20A.F1 Tone_Gen/Clock_Generator/SLICE_130
+ROUTE        13     0.967     R14C20A.F1 to     R8C37C.CLK \Tone_Gen/clk_divider
+                  --------
+                    5.586   (23.1% logic, 76.9% route), 6 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 50.000000 MHz ;    |            -|            -|   4 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+1 preference(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+Tone_Gen/Audio_Pulse/n118               |       7|    3467|     84.64%
+                                        |        |        |
+n49                                     |      63|    2791|     68.14%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n9                 |       2|    1872|     45.70%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3153              |       1|    1570|     38.33%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3757              |       1|    1535|     37.48%
+                                        |        |        |
+n50                                     |      20|    1305|     31.86%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3732              |       1|     926|     22.61%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3152              |       1|     872|     21.29%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3295              |       2|     853|     20.83%
+                                        |        |        |
+n4067                                   |      22|     666|     16.26%
+                                        |        |        |
+n4068                                   |      26|     642|     15.67%
+                                        |        |        |
+n4056                                   |      25|     593|     14.48%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3745              |       1|     532|     12.99%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 16
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: kbclock_c   Source: kbclock.PAD
+      Not reported because source and destination domains are unrelated.
+      To report these transfers please refer to preference CLKSKEWDIFF to define
+      external clock skew between clock ports.
+
+   Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 1
+
+Clock Domain: kbclock_c   Source: kbclock.PAD   Loads: 30
+   No transfer within this clock domain is found
+
+Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0   Loads: 2
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 5
+
+Clock Domain: \Tone_Gen/clk_divider   Source: Tone_Gen/Clock_Generator/SLICE_130.F1   Loads: 13
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 10
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 4096  Score: 5495552
+Cumulative negative slack: 5495552
+
+Constraints cover 10147 paths, 6 nets, and 739 connections (62.95% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 4096 (hold)
+Score: 0 (setup), 5495552 (hold)
+Cumulative negative slack: 5495552 (0+5495552)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

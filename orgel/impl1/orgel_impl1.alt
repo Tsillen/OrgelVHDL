@@ -1,0 +1,14 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Tue Oct 14 20:52:23 2014 *
+NOTE DESIGN NAME: top_layer *
+NOTE DEVICE NAME: LCMXO2-7000HE-4TQFP144 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS clk : 3 : in *
+NOTE PINS audio_l : 97 : out *
+NOTE PINS audio_r : 96 : out *
+NOTE PINS reset : 43 : in *
+NOTE PINS kbclock : 95 : in *
+NOTE PINS kbdata : 94 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *

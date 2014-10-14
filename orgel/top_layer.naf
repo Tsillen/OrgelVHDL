@@ -1,0 +1,6 @@
+clk  i
+reset  i
+kbclock  i
+kbdata  i
+audio_r  o
+audio_l  o

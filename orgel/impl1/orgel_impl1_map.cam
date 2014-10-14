@@ -1,0 +1,73 @@
+[ START MERGED ]
+Read_key/L_Showkey/n7 kbclock_c
+Read_key/L_Constantkey/n7 clk_c
+[ END MERGED ]
+[ START CLIPPED ]
+GND_net
+VCC_net
+Tone_Gen/Audio_Pulse/equal_8_16/S1
+Tone_Gen/Audio_Pulse/equal_8_16/S0
+Tone_Gen/Audio_Pulse/equal_8_0/S1
+Tone_Gen/Audio_Pulse/equal_8_0/S0
+Tone_Gen/Audio_Pulse/equal_8_0/CI
+Tone_Gen/Audio_Pulse/equal_8_17/S0
+Tone_Gen/Audio_Pulse/equal_8_17/CO
+Tone_Gen/Audio_Pulse/cnt_229_add_4_1/S0
+Tone_Gen/Audio_Pulse/cnt_229_add_4_1/CI
+Tone_Gen/Audio_Pulse/equal_8_12/S1
+Tone_Gen/Audio_Pulse/equal_8_12/S0
+Tone_Gen/Audio_Pulse/equal_8_14/S1
+Tone_Gen/Audio_Pulse/equal_8_14/S0
+Tone_Gen/Audio_Pulse/cnt_229_add_4_17/CO
+Read_key/L_Showkey/add_2672_2/S1
+Read_key/L_Showkey/add_2672_2/S0
+Read_key/L_Showkey/add_2672_2/CI
+Read_key/L_Showkey/add_2672_4/S1
+Read_key/L_Showkey/add_2672_4/S0
+Read_key/L_Showkey/add_2672_6/S1
+Read_key/L_Showkey/add_2672_6/S0
+Read_key/L_Showkey/add_2672_8/S1
+Read_key/L_Showkey/add_2672_8/S0
+Read_key/L_Showkey/add_2672_10/S1
+Read_key/L_Showkey/add_2672_10/S0
+Read_key/L_Showkey/add_2672_12/S1
+Read_key/L_Showkey/add_2672_12/S0
+Read_key/L_Showkey/add_2672_14/S1
+Read_key/L_Showkey/add_2672_14/S0
+Read_key/L_Showkey/cnt_230_add_4_1/S0
+Read_key/L_Showkey/cnt_230_add_4_1/CI
+Read_key/L_Showkey/add_2672_16/S1
+Read_key/L_Showkey/add_2672_16/S0
+Read_key/L_Showkey/add_2672_18/S1
+Read_key/L_Showkey/add_2672_18/S0
+Read_key/L_Showkey/add_2672_20/S1
+Read_key/L_Showkey/add_2672_20/S0
+Read_key/L_Showkey/add_2672_22/S1
+Read_key/L_Showkey/add_2672_22/S0
+Read_key/L_Showkey/add_2672_24/S1
+Read_key/L_Showkey/add_2672_24/S0
+Read_key/L_Showkey/cnt_230_add_4_33/S1
+Read_key/L_Showkey/cnt_230_add_4_33/CO
+Read_key/L_Showkey/add_2672_26/S1
+Read_key/L_Showkey/add_2672_26/S0
+Read_key/L_Showkey/add_2672_28/S1
+Read_key/L_Showkey/add_2672_28/S0
+Read_key/L_Showkey/add_2672_30/S1
+Read_key/L_Showkey/add_2672_30/S0
+Read_key/L_Showkey/add_2672_32/S0
+Read_key/L_Showkey/add_2672_32/CO
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.3.0.109 -- WARNING: Map write only section -- Tue Oct 14 20:52:03 2014
+
+SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE ;
+LOCATE COMP "clk" SITE "3" ;
+LOCATE COMP "audio_l" SITE "97" ;
+LOCATE COMP "audio_r" SITE "96" ;
+LOCATE COMP "reset" SITE "43" ;
+LOCATE COMP "kbclock" SITE "95" ;
+LOCATE COMP "kbdata" SITE "94" ;
+FREQUENCY PORT "clk" 50.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

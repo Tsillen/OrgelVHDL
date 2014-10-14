@@ -1,0 +1,64 @@
+1 potential circuit loop found in timing analysis.
+Loading design for application iotiming from file orgel_impl1.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 5
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+Loading design for application iotiming from file orgel_impl1.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 6
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+Loading design for application iotiming from file orgel_impl1.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: M
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+// Design: top_layer
+// Package: TQFP144
+// ncd File: orgel_impl1.ncd
+// Version: Diamond (64-bit) 3.3.0.109
+// Written on Mon Oct 13 15:31:48 2014
+// M: Minimum Performance Grade
+// iotiming orgel_impl1.ncd orgel_impl1.prf -gui
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (M, 6, 5, 4):
+
+// Input Setup and Hold Times
+
+Port   Clock   Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+kbdata kbclock F    -0.629      M       4.455     4
+reset  clk     R     6.046      4       0.044     M
+reset  kbclock F     0.342      4       1.843     4
+
+
+// Clock to Output Delay
+
+Port  Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+(no clock to output min/max data)
+
+
+// Internal_Clock to Output
+
+Port    Internal_Clock       
+--------------------------------------------------------
+audio_l \Tone_Gen/clk_divider
+audio_r \Tone_Gen/clk_divider
+WARNING: you must also run trce with hold speed: 4
+WARNING: you must also run trce with setup speed: M

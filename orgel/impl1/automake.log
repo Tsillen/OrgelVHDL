@@ -1,0 +1,705 @@
+
+synthesis -f "orgel_impl1_lattice.synproj"
+synthesis:  version Diamond (64-bit) 3.3.0.109
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Oct 14 20:52:01 2014
+
+
+Command Line:  synthesis -f orgel_impl1_lattice.synproj -gui 
+
+Synthesis options:
+The -a option is MachXO2.
+The -s option is 4.
+The -t option is TQFP144.
+The -d option is LCMXO2-7000HE.
+Using package TQFP144.
+Using performance grade 4.
+                                                          
+
+##########################################################
+
+### Lattice Family : MachXO2A
+
+### Device  : LCMXO2-7000HE
+
+### Package : TQFP144
+
+### Speed   : 4
+
+##########################################################
+
+                                                          
+
+Optimization goal = Balanced
+Top-level module name = top_layer.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true (default)
+DSP utilization = 100 % (default)
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+WARNING - synthesis: Using default loop_limit value of 1950
+
+Use IO Insertion = TRUE
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data (searchpath added)
+-p C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1 (searchpath added)
+-p C:/Users/Spikee/Desktop/kakmetperen/orgel (searchpath added)
+VHDL library = work
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Clock_Generator.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Const_Key.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Key2_Pulselenght.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Pulselenght2_Audio.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/readkey.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/showkey.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/Tone_Generator.vhd
+VHDL design file = C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/source/top_layer.vhd
+NGD file = orgel_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Compile design.
+Compile Design Begin
+Top module name (VHDL): top_layer
+Last elaborated design is top_layer(Behavioral)
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Top-level module name = top_layer.
+
+Extracted state machine for register: \Read_key/L_Constantkey/current_s
+
+State machine has 4 states with original encoding
+
+original encoding -> new encoding (OneHot Encoding)
+
+ 00 -> 0001
+
+ 01 -> 0010
+
+ 10 -> 0100
+
+ 11 -> 1000
+
+ Number of Reachable States for this State Machine are 3 
+
+
+
+
+
+    <postMsg mid="35935010" type="Warning" dynamic="3" navigation="2" arg0="c:/users/spikee/desktop/kakmetperen/orgel/impl1/source/const_key.vhd(88): " arg1="0" arg2="\Read_key/L_Constantkey/current_s_FSM" arg3="c:/users/spikee/desktop/kakmetperen/orgel/impl1/source/const_key.vhd" arg4="88"  />
+GSR instance connected to net reset_c.
+    <postMsg mid="35001611" type="Warning" dynamic="0" navigation="0"  />
+Applying 200.000000 MHz constraint to all clocks
+
+Results of NGD DRC are available in top_layer_drc.log.
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_32/CO"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_32/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_30/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_30/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_28/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_28/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_26/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_26/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/cnt_230_add_4_33/CO"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/cnt_230_add_4_33/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_24/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_24/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_22/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_22/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_20/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_20/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_18/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_18/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_16/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_16/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/cnt_230_add_4_1/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_14/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_14/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_12/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_12/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_10/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_10/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_8/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_8/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_6/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_6/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_4/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_4/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_2/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Read_key/L_Showkey/add_2672_2/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/cnt_229_add_4_17/CO"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_14/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_14/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_12/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_12/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/cnt_229_add_4_1/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_17/CO"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_17/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_0/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_0/S1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_16/S0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="0" arg0="logical" arg1="Tone_Gen/Audio_Pulse/equal_8_16/S1"  />
+    <postMsg mid="1163101" type="Warning" dynamic="1" navigation="0" arg0="47"  />
+
+Design Results:
+    375 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file orgel_impl1.ngd.
+
+################### Begin Area Report (top_layer)######################
+Number of register bits => 94 of 7209 (1 % )
+CCU2D => 47
+FD1P3AX => 28
+FD1P3IX => 7
+FD1S1D => 1
+FD1S3AX => 6
+FD1S3AY => 1
+FD1S3BX => 1
+FD1S3DX => 1
+FD1S3IX => 49
+GSR => 1
+IB => 4
+LUT4 => 201
+OB => 2
+PFUMX => 23
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 5
+  Net : n7, loads : 49
+  Net : clk_divider, loads : 18
+  Net : clk_c, loads : 17
+  Net : n7, loads : 10
+  Net : n1917, loads : 2
+Clock Enable Nets
+Number of Clock Enables: 13
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : n49, loads : 61
+  Net : n4003, loads : 33
+  Net : n1809, loads : 32
+  Net : n793, loads : 31
+  Net : n1888, loads : 31
+  Net : n4026, loads : 30
+  Net : n4021, loads : 27
+  Net : scancode_sync_1, loads : 27
+  Net : n4025, loads : 27
+  Net : n50, loads : 22
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets \Tone_Gen/clk_divider]   |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets clk_c]                   |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets \Read_key/L_Showkey/n7]  |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets                          |             |             |
+\Read_key/L_Constantkey/n7]             |            -|            -|     0  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Peak Memory Usage: 77.316  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 1.357  secs
+--------------------------------------------------------------
+
+map -a "MachXO2" -p LCMXO2-7000HE -t TQFP144 -s 4 -oc Commercial   "orgel_impl1.ngd" -o "orgel_impl1_map.ncd" -pr "orgel_impl1.prf" -mp "orgel_impl1.mrp" -lpf "C:/Users/Spikee/Desktop/kakmetperen/orgel/impl1/orgel_impl1.lpf" -lpf "C:/Users/Spikee/Desktop/kakmetperen/orgel/orgel.lpf" -c 0            
+map:  version Diamond (64-bit) 3.3.0.109
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+   Process the file: orgel_impl1.ngd
+   Picdevice="LCMXO2-7000HE"
+
+   Pictype="TQFP144"
+
+   Picspeed=4
+
+   Remove unused logic
+
+   Do not produce over sized NCDs.
+
+Part used: LCMXO2-7000HETQFP144, Performance used: 4.
+
+Loading device for application map from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+
+Running general design DRC...
+
+Removing unused logic...
+
+Optimizing...
+
+
+
+
+Design Summary:
+   Number of registers:     94 out of  7209 (1%)
+      PFU registers:           94 out of  6864 (1%)
+      PIO registers:            0 out of   345 (0%)
+   Number of SLICEs:       147 out of  3432 (4%)
+      SLICEs as Logic/ROM:    147 out of  3432 (4%)
+      SLICEs as RAM:            0 out of  2574 (0%)
+      SLICEs as Carry:         47 out of  3432 (1%)
+   Number of LUT4s:        292 out of  6864 (4%)
+      Number of logic LUTs:      198
+      Number of distributed RAM:   0 (0 LUT4s)
+      Number of ripple logic:     47 (94 LUT4s)
+      Number of shift registers:   0
+   Number of PIO sites used: 6 + 4(JTAG) out of 115 (9%)
+   Number of block RAMs:  0 out of 26 (0%)
+   Number of GSRs:  1 out of 1 (100%)
+   EFB used :       No
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   POR :            On
+   Bandgap :        On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 2 (0%)
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
+   Number of clocks:  4
+     Net clk_c: 16 loads, 11 rising, 5 falling (Driver: PIO clk )
+     Net kbclock_c: 30 loads, 0 rising, 30 falling (Driver: PIO kbclock )
+     Net Tone_Gen/Clock_Generator/n1917: 1 loads, 1 rising, 0 falling (Driver: Tone_Gen/Clock_Generator/i3303_3_lut )
+     Net \Tone_Gen/clk_divider: 10 loads, 10 rising, 0 falling (Driver: Tone_Gen/Clock_Generator/i544_3_lut )
+   Number of Clock Enables:  13
+     Net Read_key/L_Showkey/n3590: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3599: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n134: 4 loads, 4 LSLICEs
+     Net Read_key/L_Showkey/n3634: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3674: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3621: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3598: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3589: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3632: 1 loads, 1 LSLICEs
+     Net Read_key/L_Showkey/n3635: 1 loads, 1 LSLICEs
+     Net Read_key/L_Constantkey/byteread_sync2: 4 loads, 4 LSLICEs
+     Net Tone_Gen/Clock_Generator/n872: 2 loads, 2 LSLICEs
+     Net Tone_Gen/Clock_Generator/n5: 4 loads, 4 LSLICEs
+   Number of LSRs:  6
+     Net Read_key/L_Showkey/n4003: 16 loads, 16 LSLICEs
+     Net Tone_Gen/Clock_Generator/n3212: 2 loads, 2 LSLICEs
+     Net Tone_Gen/Clock_Generator/n1917: 1 loads, 1 LSLICEs
+     Net Tone_Gen/Clock_Generator/n883: 4 loads, 4 LSLICEs
+     Net Tone_Gen/Audio_Pulse/n805: 1 loads, 1 LSLICEs
+     Net Tone_Gen/Audio_Pulse/n118: 9 loads, 9 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net n49: 63 loads
+     Net n4026: 32 loads
+     Net Read_key/L_Showkey/n1809: 32 loads
+     Net Read_key/L_Showkey/n1888: 31 loads
+     Net Read_key/L_Showkey/n793: 31 loads
+     Net n4021: 29 loads
+     Net n4025: 29 loads
+     Net scancode_sync_1: 29 loads
+     Net n50: 24 loads
+     Net n4023: 23 loads
+ 
+
+   Number of warnings:  0
+   Number of errors:    0
+
+
+
+Total CPU Time: 0 secs  
+Total REAL Time: 0 secs  
+Peak Memory Usage: 57 MB
+
+Dumping design to file orgel_impl1_map.ncd.
+
+ncd2vdb "orgel_impl1_map.ncd" "orgel_impl1_map.vdb"
+
+Loading device for application ncd2vdb from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Design:  top_layer
+
+mpartrce -p "orgel_impl1.p2t" -f "orgel_impl1.p3t" -tf "orgel_impl1.pt" "orgel_impl1_map.ncd" "orgel_impl1.ncd"
+
+---- MParTrce Tool ----
+Removing old design directory at request of -rem command line option to this program.
+Running par. Please wait . . .
+
+Lattice Place and Route Report for Design "orgel_impl1_map.ncd"
+Tue Oct 14 20:52:03 2014
+
+PAR: Place And Route Diamond (64-bit) 3.3.0.109.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF orgel_impl1_map.ncd orgel_impl1.dir/5_1.ncd orgel_impl1.prf
+Preference file: orgel_impl1.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file orgel_impl1_map.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 4
+Loading device for application par from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)    6+4(JTAG)/336     3% used
+                   6+4(JTAG)/115     9% bonded
+
+   SLICE            147/3432          4% used
+
+   GSR                1/1           100% used
+
+
+1 potential circuit loop found in timing analysis.
+Number of Signals: 368
+Number of Connections: 1192
+
+Pin Constraint Summary:
+   6 out of 6 pins locked (100% locked).
+
+The following 3 signals are selected to use the primary clock routing resources:
+    kbclock_c (driver: kbclock, clk load #: 30)
+    clk_c (driver: clk, clk load #: 16)
+    \Tone_Gen/clk_divider (driver: Tone_Gen/Clock_Generator/SLICE_132, clk load #: 10)
+
+    <postMsg mid="61061008" type="Warning" dynamic="5" navigation="0" arg0="kbclock_c" arg1="Primary" arg2="kbclock" arg3="95" arg4="Primary"  />
+    <postMsg mid="61061008" type="Warning" dynamic="5" navigation="0" arg0="clk_c" arg1="Primary" arg2="clk" arg3="3" arg4="Primary"  />
+
+The following 1 signal is selected to use the secondary clock routing resources:
+    Read_key/L_Showkey/n4003 (driver: Read_key/L_Showkey/SLICE_101, clk load #: 0, sr load #: 16, ce load #: 0)
+
+Signal reset_c is selected as Global Set/Reset.
+Starting Placer Phase 0.
+..........
+Finished Placer Phase 0.  REAL time: 3 secs 
+
+Starting Placer Phase 1.
+...................
+Placer score = 97018.
+Finished Placer Phase 1.  REAL time: 7 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  94785
+Finished Placer Phase 2.  REAL time: 7 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 0 out of 8 (0%)
+  General PIO: 2 out of 336 (0%)
+  PLL        : 0 out of 2 (0%)
+  DCM        : 0 out of 2 (0%)
+  DCC        : 0 out of 8 (0%)
+
+Quadrants All (TL, TR, BL, BR) - Global Clocks:
+  PRIMARY "kbclock_c" from comp "kbclock" on PIO site "95 (PR9B)", clk load = 30
+  PRIMARY "clk_c" from comp "clk" on PIO site "3 (PL4A)", clk load = 16
+  PRIMARY "\Tone_Gen/clk_divider" from F1 on comp "Tone_Gen/Clock_Generator/SLICE_132" on site "R2C19A", clk load = 10
+  SECONDARY "Read_key/L_Showkey/n4003" from F0 on comp "Read_key/L_Showkey/SLICE_101" on site "R22C18A", clk load = 0, ce load = 0, sr load = 16
+
+  PRIMARY  : 3 out of 8 (37%)
+  SECONDARY: 1 out of 8 (12%)
+
+Edge Clocks:
+  No edge clock selected.
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   6 + 4(JTAG) out of 336 (3.0%) PIO sites used.
+   6 + 4(JTAG) out of 115 (8.7%) bonded PIO sites used.
+   Number of PIO comps: 6; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+---------------+------------+-----------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref |
++----------+---------------+------------+-----------+
+| 0        | 0 / 28 (  0%) | -          | -         |
+| 1        | 4 / 29 ( 13%) | 3.3V       | -         |
+| 2        | 1 / 29 (  3%) | 3.3V       | -         |
+| 3        | 0 / 9 (  0%)  | -          | -         |
+| 4        | 0 / 10 (  0%) | -          | -         |
+| 5        | 1 / 10 ( 10%) | 3.3V       | -         |
++----------+---------------+------------+-----------+
+
+Total placer CPU time: 6 secs 
+
+Dumping design to file orgel_impl1.dir/5_1.ncd.
+
+1 potential circuit loop found in timing analysis.
+0 connections routed; 1192 unrouted.
+Starting router resource preassignment
+    <postMsg mid="62061008" type="Warning" dynamic="1" navigation="0" arg0="kbclock_c"  />
+
+    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=Tone_Gen/Clock_Generator/n1917 loads=2 clock_loads=1"  />
+
+Completed router resource preassignment. Real time: 9 secs 
+
+Start NBR router at 20:52:12 10/14/14
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design. Thanks.                                       
+*****************************************************************
+
+1 potential circuit loop found in timing analysis.
+Start NBR special constraint process at 20:52:13 10/14/14
+
+Start NBR section for initial routing at 20:52:13 10/14/14
+Level 1, iteration 1
+11(0.00%) conflicts; 958(80.37%) untouched conns; 2686541 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -8.580ns/-2686.542ns; real time: 10 secs 
+Level 2, iteration 1
+68(0.02%) conflicts; 808(67.79%) untouched conns; 2175236 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -7.506ns/-2175.237ns; real time: 11 secs 
+Level 3, iteration 1
+39(0.01%) conflicts; 579(48.57%) untouched conns; 2394462 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -7.718ns/-2394.463ns; real time: 11 secs 
+Level 4, iteration 1
+63(0.02%) conflicts; 0(0.00%) untouched conn; 2342125 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -7.740ns/-2342.126ns; real time: 12 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 20:52:15 10/14/14
+Level 4, iteration 1
+56(0.01%) conflicts; 0(0.00%) untouched conn; 2359691 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -7.604ns/-2359.692ns; real time: 12 secs 
+Level 4, iteration 2
+44(0.01%) conflicts; 0(0.00%) untouched conn; 976 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -0.218ns/-0.976ns; real time: 12 secs 
+Level 4, iteration 3
+7(0.00%) conflicts; 0(0.00%) untouched conn; 3119738 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -10.524ns/-3119.738ns; real time: 13 secs 
+Level 4, iteration 4
+4(0.00%) conflicts; 0(0.00%) untouched conn; 3119738 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -10.524ns/-3119.738ns; real time: 13 secs 
+Level 4, iteration 5
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.020ns/0.000ns; real time: 13 secs 
+Level 4, iteration 6
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.020ns/0.000ns; real time: 14 secs 
+Level 4, iteration 7
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.020ns/0.000ns; real time: 14 secs 
+Level 4, iteration 8
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.020ns/0.000ns; real time: 14 secs 
+
+Start NBR section for setup/hold timing optimization with effort level 3 at 20:52:17 10/14/14
+1 potential circuit loop found in timing analysis.
+    <postMsg mid="62001129" type="Warning" dynamic="2" navigation="0" arg0="4096" arg1="250"  />
+1 potential circuit loop found in timing analysis.
+
+Start NBR section for re-routing at 20:52:18 10/14/14
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.020ns/0.000ns; real time: 15 secs 
+
+Start NBR section for post-routing at 20:52:18 10/14/14
+1 potential circuit loop found in timing analysis.
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 0 (0.00%)
+  Estimated worst slack<setup> : 2.020ns
+  Timing score<setup> : 0
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=Tone_Gen/Clock_Generator/n1917 loads=2 clock_loads=1"  />
+
+1 potential circuit loop found in timing analysis.
+1 potential circuit loop found in timing analysis.
+1 potential circuit loop found in timing analysis.
+Total CPU time 15 secs 
+Total REAL time: 16 secs 
+Completely routed.
+End of route.  1192 routed (100.00%); 0 unrouted.
+Checking DRC ... 
+No errors found.
+
+Hold time timing score: 7216, hold timing errors: 4096
+
+Timing score: 0 
+
+Dumping design to file orgel_impl1.dir/5_1.ncd.
+
+
+PAR_SUMMARY::Run status = completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 2.020
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<hold /<ns>> = -3.168
+PAR_SUMMARY::Timing score<hold /<ns>> = 7216.672
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 15 secs 
+Total REAL time to completion: 17 secs 
+
+par done!
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+Exiting par with exit code 0
+Exiting mpartrce with exit code 0
+
+bitgen -f "orgel_impl1.t2b" -w "orgel_impl1.ncd" "orgel_impl1.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.3.0.109
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file orgel_impl1.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 4
+Loading device for application Bitgen from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from orgel_impl1.prf.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                         2.08**  |
++---------------------------------+---------------------------------+
+|                  CONFIG_SECURE  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                      JTAG_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                       SDM_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  CONFIGURATION  |                          CFG**  |
++---------------------------------+---------------------------------+
+|                COMPRESS_CONFIG  |                           ON**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|               ONE_TIME_PROGRAM  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                 ENABLE_TRANSFR  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SHAREDEBRINIT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 1.84.
+ 
+Saving bit stream in "orgel_impl1.bit".

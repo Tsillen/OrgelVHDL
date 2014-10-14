@@ -1,0 +1,317 @@
+
+Loading design for application trce from file orgel_impl1_map.ncd.
+Design name: top_layer
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-7000HE
+Package:     TQFP144
+Performance: 4
+Loading device for application trce from file 'xo2c7000.nph' in environment: C:/lscc/diamond/3.3_x64/ispfpga.
+Package Status:                     Final          Version 1.36.
+Performance Hardware Data Status:   Final          Version 26.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.3.0.109
+Mon Oct 13 15:31:03 2014
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o orgel_impl1.tw1 -gui orgel_impl1_map.ncd orgel_impl1.prf 
+Design file:     orgel_impl1_map.ncd
+Preference file: orgel_impl1.prf
+Device,speed:    LCMXO2-7000HE,4
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY PORT "clk" 50.000000 MHz ;
+            4096 items scored, 3921 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 7.521ns (weighted slack = -15.042ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/scancode_sync_i0_i3  (from clk_c -)
+   Destination:    FF         Data in        Tone_Gen/Audio_Pulse/cnt_229__i10  (to \Tone_Gen/clk_divider +)
+                   FF                        Tone_Gen/Audio_Pulse/cnt_229__i9
+
+   Delay:              17.247ns  (28.5% logic, 71.5% route), 10 logic levels.
+
+ Constraint Details:
+
+     17.247ns physical path delay SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_39 exceeds
+     10.000ns delay constraint less
+      0.274ns LSR_SET requirement (totaling 9.726ns) by 7.521ns
+
+ Physical Path Details:
+
+      Data path SLICE_73 to Tone_Gen/Audio_Pulse/SLICE_39:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.452   SLICE_73.CLK to    SLICE_73.Q1 SLICE_73 (from clk_c)
+ROUTE        22   e 1.234    SLICE_73.Q1 to   SLICE_116.A0 scancode_sync_3
+CTOF_DEL    ---     0.495   SLICE_116.A0 to   SLICE_116.F0 SLICE_116
+ROUTE        20   e 1.234   SLICE_116.F0 to */SLICE_155.B0 n4060
+CTOF_DEL    ---     0.495 */SLICE_155.B0 to */SLICE_155.F0 Tone_Gen/Pulse_Length/SLICE_155
+ROUTE         1   e 1.234 */SLICE_155.F0 to */SLICE_126.C1 Tone_Gen/Pulse_Length/n49_adj_10
+CTOF_DEL    ---     0.495 */SLICE_126.C1 to */SLICE_126.F1 Tone_Gen/Pulse_Length/SLICE_126
+ROUTE         1   e 1.234 */SLICE_126.F1 to */SLICE_127.B0 Tone_Gen/Pulse_Length/n60
+CTOF_DEL    ---     0.495 */SLICE_127.B0 to */SLICE_127.F0 Tone_Gen/SLICE_127
+ROUTE         2   e 1.234 */SLICE_127.F0 to */SLICE_125.D1 Tone_Gen/n62
+CTOF_DEL    ---     0.495 */SLICE_125.D1 to */SLICE_125.F1 Tone_Gen/SLICE_125
+ROUTE         1   e 1.234 */SLICE_125.F1 to */SLICE_128.B1 Tone_Gen/Audio_Pulse/n861
+CTOF_DEL    ---     0.495 */SLICE_128.B1 to */SLICE_128.F1 Tone_Gen/SLICE_128
+ROUTE         2   e 1.234 */SLICE_128.F1 to    SLICE_74.B1 Tone_Gen/Audio_Pulse/n3295
+CTOF_DEL    ---     0.495    SLICE_74.B1 to    SLICE_74.F1 SLICE_74
+ROUTE         1   e 1.234    SLICE_74.F1 to   SLICE_113.C1 Tone_Gen/Audio_Pulse/n3732
+CTOF_DEL    ---     0.495   SLICE_113.C1 to   SLICE_113.F1 SLICE_113
+ROUTE         1   e 1.234   SLICE_113.F1 to */SLICE_135.D0 Tone_Gen/Audio_Pulse/n3757
+CTOF_DEL    ---     0.495 */SLICE_135.D0 to */SLICE_135.F0 Tone_Gen/Audio_Pulse/SLICE_135
+ROUTE         7   e 1.234 */SLICE_135.F0 to */SLICE_39.LSR Tone_Gen/Audio_Pulse/n118 (to \Tone_Gen/clk_divider)
+                  --------
+                   17.247   (28.5% logic, 71.5% route), 10 logic levels.
+
+Warning:  28.537MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 50.000000 MHz ;    |   50.000 MHz|   28.537 MHz|  10 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+1 preference(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+Tone_Gen/Audio_Pulse/n118               |       7|    3444|     87.83%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n9                 |       2|    2175|     55.47%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3153              |       1|    1869|     47.67%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3757              |       1|    1407|     35.88%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3152              |       1|    1078|     27.49%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3732              |       1|     966|     24.64%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3295              |       2|     923|     23.54%
+                                        |        |        |
+scancode_sync_4                         |      10|     644|     16.42%
+                                        |        |        |
+scancode_sync_3                         |      22|     635|     16.19%
+                                        |        |        |
+scancode_sync_0                         |      22|     631|     16.09%
+                                        |        |        |
+scancode_sync_1                         |      24|     596|     15.20%
+                                        |        |        |
+scancode_sync_5                         |       9|     595|     15.17%
+                                        |        |        |
+scancode_sync_6                         |       6|     464|     11.83%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3151              |       1|     463|     11.81%
+                                        |        |        |
+Tone_Gen/n91                            |       3|     461|     11.76%
+                                        |        |        |
+Tone_Gen/n56                            |       2|     445|     11.35%
+                                        |        |        |
+n4056                                   |      25|     442|     11.27%
+                                        |        |        |
+Tone_Gen/Audio_Pulse/n3745              |       1|     441|     11.25%
+                                        |        |        |
+n4068                                   |      26|     401|     10.23%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 16
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: kbclock_c   Source: kbclock.PAD
+      Not reported because source and destination domains are unrelated.
+      To report these transfers please refer to preference CLKSKEWDIFF to define
+      external clock skew between clock ports.
+
+   Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 1
+
+Clock Domain: kbclock_c   Source: kbclock.PAD   Loads: 30
+   No transfer within this clock domain is found
+
+Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0   Loads: 2
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 5
+
+Clock Domain: \Tone_Gen/clk_divider   Source: Tone_Gen/Clock_Generator/SLICE_130.F1   Loads: 13
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 10
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 3921  Score: 23860054
+Cumulative negative slack: 23860054
+
+Constraints cover 10147 paths, 6 nets, and 731 connections (62.27% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.3.0.109
+Mon Oct 13 15:31:03 2014
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2014 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o orgel_impl1.tw1 -gui orgel_impl1_map.ncd orgel_impl1.prf 
+Design file:     orgel_impl1_map.ncd
+Preference file: orgel_impl1.prf
+Device,speed:    LCMXO2-7000HE,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY PORT "clk" 50.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.351ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              Read_key/L_Constantkey/byteread_sync1_30  (from clk_c -)
+   Destination:    FF         Data in        Read_key/L_Constantkey/byteread_sync2_31  (to clk_c -)
+
+   Delay:               0.332ns  (40.1% logic, 59.9% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.332ns physical path delay SLICE_117 to SLICE_117 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint requirement (totaling -0.019ns) by 0.351ns
+
+ Physical Path Details:
+
+      Data path SLICE_117 to SLICE_117:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133  SLICE_117.CLK to   SLICE_117.Q0 SLICE_117 (from clk_c)
+ROUTE         1   e 0.199   SLICE_117.Q0 to   SLICE_117.M1 Read_key/L_Constantkey/byteread_sync1 (to clk_c)
+                  --------
+                    0.332   (40.1% logic, 59.9% route), 1 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 50.000000 MHz ;    |            -|            -|   1  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 16
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: kbclock_c   Source: kbclock.PAD
+      Not reported because source and destination domains are unrelated.
+      To report these transfers please refer to preference CLKSKEWDIFF to define
+      external clock skew between clock ports.
+
+   Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 1
+
+Clock Domain: kbclock_c   Source: kbclock.PAD   Loads: 30
+   No transfer within this clock domain is found
+
+Clock Domain: Tone_Gen/Clock_Generator/n1528   Source: Tone_Gen/Clock_Generator/SLICE_130.F0   Loads: 2
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 5
+
+Clock Domain: \Tone_Gen/clk_divider   Source: Tone_Gen/Clock_Generator/SLICE_130.F1   Loads: 13
+   Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clk_c   Source: clk.PAD
+      Covered under: FREQUENCY PORT "clk" 50.000000 MHz ;   Transfers: 10
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 10147 paths, 6 nets, and 739 connections (62.95% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 3921 (setup), 0 (hold)
+Score: 23860054 (setup), 0 (hold)
+Cumulative negative slack: 23860054 (23860054+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

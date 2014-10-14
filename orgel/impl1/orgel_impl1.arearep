@@ -1,0 +1,118 @@
+----------------------------------------------------------------------
+Report for cell top_layer.Behavioral
+Register bits:  94 of 7209 (1.304%)
+I/O cells:      6
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        47          100.0
+                            FD1P3AX        28          100.0
+                            FD1P3IX         7          100.0
+                             FD1S1D         1          100.0
+                            FD1S3AX         6          100.0
+                            FD1S3AY         1          100.0
+                            FD1S3BX         1          100.0
+                            FD1S3DX         1          100.0
+                            FD1S3IX        49          100.0
+                                GSR         1          100.0
+                                 IB         4          100.0
+                               LUT4       201          100.0
+                                 OB         2          100.0
+                              PFUMX        23          100.0
+SUB MODULES
+                    Clock_Generator         1
+                          Const_Key         1
+                   Key2_Pulselenght         1
+                 Pulselenght2_Audio         1
+                     Tone_Generator         1
+                            readkey         1
+                            showkey         1
+                              TOTAL       379
+----------------------------------------------------------------------
+Report for cell readkey.v1
+Instance Path : Read_key
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        33           70.2
+                            FD1P3AX        25           89.3
+                            FD1S3AX         5           83.3
+                            FD1S3AY         1          100.0
+                            FD1S3IX        31           63.3
+                               LUT4        94           46.8
+                              PFUMX         1            4.3
+SUB MODULES
+                          Const_Key         1
+                            showkey         1
+                              TOTAL       192
+----------------------------------------------------------------------
+Report for cell showkey.v1
+Instance Path : Read_key.L_Showkey
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        33           70.2
+                            FD1P3AX        17           60.7
+                            FD1S3AX         1           16.7
+                            FD1S3IX        31           63.3
+                               LUT4        34           16.9
+                              TOTAL       116
+----------------------------------------------------------------------
+Report for cell Const_Key.v1
+Instance Path : Read_key.L_Constantkey
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         8           28.6
+                            FD1S3AX         4           66.7
+                            FD1S3AY         1          100.0
+                               LUT4        60           29.9
+                              PFUMX         1            4.3
+                              TOTAL        74
+----------------------------------------------------------------------
+Report for cell Tone_Generator.v1
+Instance Path : Tone_Gen
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        14           29.8
+                            FD1P3AX         3           10.7
+                            FD1P3IX         7          100.0
+                             FD1S1D         1          100.0
+                            FD1S3AX         1           16.7
+                            FD1S3BX         1          100.0
+                            FD1S3DX         1          100.0
+                            FD1S3IX        18           36.7
+                               LUT4       106           52.7
+                              PFUMX        22           95.7
+SUB MODULES
+                    Clock_Generator         1
+                   Key2_Pulselenght         1
+                 Pulselenght2_Audio         1
+                              TOTAL       177
+----------------------------------------------------------------------
+Report for cell Key2_Pulselenght.v1
+Instance Path : Tone_Gen.Pulse_Length
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        65           32.3
+                              PFUMX        19           82.6
+                              TOTAL        84
+----------------------------------------------------------------------
+Report for cell Clock_Generator.v1
+Instance Path : Tone_Gen.Clock_Generator
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         3           10.7
+                            FD1P3IX         7          100.0
+                             FD1S1D         1          100.0
+                            FD1S3AX         1           16.7
+                            FD1S3BX         1          100.0
+                            FD1S3DX         1          100.0
+                               LUT4        34           16.9
+                              PFUMX         3           13.0
+                              TOTAL        51
+----------------------------------------------------------------------
+Report for cell Pulselenght2_Audio.v1
+Instance Path : Tone_Gen.Audio_Pulse
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        14           29.8
+                            FD1S3IX        18           36.7
+                               LUT4         7            3.5
+                              TOTAL        39

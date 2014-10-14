@@ -1,0 +1,82 @@
+---------------------------------------------------
+Report for cell top_layer
+   Instance path: top_layer
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     147.00        100.0
+                                  LUT4	     198.00        100.0
+                                 IOBUF	          6        100.0
+                                PFUREG	         94        100.0
+                                RIPPLE	         47        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               readkey	          1        54.5
+                        Tone_Generator	          1        45.2
+---------------------------------------------------
+Report for cell readkey
+   Instance path: top_layer/Read_key
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      80.12        54.5
+                                  LUT4	      88.67        44.8
+                                PFUREG	         62        66.0
+                                RIPPLE	         33        70.2
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               showkey	          1        34.1
+                             Const_Key	          1        20.4
+---------------------------------------------------
+Report for cell showkey
+   Instance path: top_layer/Read_key/L_Showkey
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      50.17        34.1
+                                  LUT4	      33.00        16.7
+                                PFUREG	         49        52.1
+                                RIPPLE	         33        70.2
+---------------------------------------------------
+Report for cell Const_Key
+   Instance path: top_layer/Read_key/L_Constantkey
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      29.95        20.4
+                                  LUT4	      55.67        28.1
+                                PFUREG	         13        13.8
+---------------------------------------------------
+Report for cell Tone_Generator
+   Instance path: top_layer/Tone_Gen
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      66.38        45.2
+                                  LUT4	     108.33        54.7
+                                PFUREG	         32        34.0
+                                RIPPLE	         14        29.8
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                    Pulselenght2_Audio	          1        10.1
+                      Key2_Pulselenght	          1        22.8
+                       Clock_Generator	          1        12.2
+---------------------------------------------------
+Report for cell Key2_Pulselenght
+   Instance path: top_layer/Tone_Gen/Pulse_Length
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      33.58        22.8
+                                  LUT4	      68.33        34.5
+---------------------------------------------------
+Report for cell Clock_Generator
+   Instance path: top_layer/Tone_Gen/Clock_Generator
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      17.97        12.2
+                                  LUT4	      33.00        16.7
+                                PFUREG	         14        14.9
+---------------------------------------------------
+Report for cell Pulselenght2_Audio
+   Instance path: top_layer/Tone_Gen/Audio_Pulse
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      14.83        10.1
+                                  LUT4	       7.00         3.5
+                                PFUREG	         18        19.1
+                                RIPPLE	         14        29.8

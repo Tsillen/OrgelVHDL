@@ -1,0 +1,63 @@
+Results of NGD DRC are available in top_layer_drc.log.
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.3_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_32/CO' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_32/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_30/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_30/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_28/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_28/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_26/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_26/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_33/CO' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_33/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_24/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_24/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_22/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_22/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_20/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_20/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_18/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_18/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_16/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_16/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/cnt_230_add_4_1/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_14/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_14/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_12/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_12/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_10/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_10/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_8/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_8/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_6/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_6/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_4/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_4/S1' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_2/S0' has no load.
+WARNING - synthesis: logical net 'Read_key/L_Showkey/add_2672_2/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/cnt_229_add_4_17/CO' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_14/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_14/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_12/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_12/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/cnt_229_add_4_1/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_17/CO' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_17/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_0/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_0/S1' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_16/S0' has no load.
+WARNING - synthesis: logical net 'Tone_Gen/Audio_Pulse/equal_8_16/S1' has no load.
+WARNING - synthesis: DRC complete with 47 warnings.
+
+Design Results:
+    375 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file orgel_impl1.ngd.
